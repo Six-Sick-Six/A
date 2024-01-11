@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>Simple Absen by HZ</title>
+</head>
+<body>
+<style>
+body {
+  margin:0px;
+  height:100vh;
+  background: #1283da;
+}
+
+.center {
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+.form-input {
+  width:200px;
+  padding:40px;
+  background:#fff;
+  box-shadow: -3px -3px 7px rgba(94, 104, 121, 0.377),
+              3px 3px 7px rgba(94, 104, 121, 0.377);
+}
+.form-input img {
+  width:50%;
+  display:none;
+  margin-bottom:30px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 5px;
+    color: #fff;
+	font-family: courier;
+}
+
+.footer-content h3{
+	font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+</style>
+<div class="center">
+<form class="form-input" action="http://bravo.pu.go.id/backend/absensi/AbsensiInputSEv1" method="POST" enctype="multipart/form-data">
+    <!-- Headers -->
+    <input type="hidden" name="Accept-Encoding" value="gzip">
+    <input type="hidden" name="Authorization" value="Basic TWllQXlhbTokMTAkOHMxN1ZBVDFzRGVhM0V0WlFNZFhnT0ZnWFZ0STlONE1zZ1BXa2JETXExUkkzY2tnbW5sRUs=">
+    <input type="hidden" name="Connection" value="Keep-Alive">
+    <input type="hidden" name="Content-Length" value="18591">
+    <input type="hidden" name="Content-Type" value="multipart/form-data; boundary=5b3d708d-7a61-4a9f-b218-611e1a417077">
+    <input type="hidden" name="Host" value="bravo.pu.go.id">
+    <input type="hidden" name="User-Agent" value="okhttp/4.2.2">
+  <!-- Form Fields -->
+  <input type="hidden" name="--5b3d708d-7a61-4a9f-b218-611e1a417077">
+	<input type="hidden" name="id" value="D18031980092018001">
+	<input type="hidden" name="comp_code" value="040000">
+	<center>
+   <h4>HZ</h4> 
+	<h4>Ubah Jam & Tanggal</h4><input type="text" name="jam" value="2024-01-09 07:17:37"></center>
+  <br><br>
+  <input type="hidden" name="type" value="1">
+  <!-- File Upload -->
+  <center>
+  <div class="image-preview-container">
+  <div class="preview">
+  <img id="preview-selected-image" />
+  </div>
+  <input type="file" name="foto_absen" onchange="previewImage(event);">
+  </center>
+	<input type="hidden" name="lat" value="5.5402238">
+	<input type="hidden" name="long" value="95.3464665">
+	<input type="hidden" name="lokasi" value="G8RW+4J8, Jl. Prof. Ali Hasyimi, Pango Raya, Kec. Ulee Kareng, Kota Banda Aceh, Aceh, Indonesia">
+	<input type="hidden" name="device" value="1">
+	<input type="hidden" name="device_os" value="CPH2113">
+	<input type="hidden" name="device_version" value="12">
+	<input type="hidden" name="tz" value="Asia/Jakarta">
+	<input type="hidden" name="jns_absen_id" value="1">
+	<input type="hidden" name="device_id" value="2a8030d968b39be6">
+	<input type="hidden" name="konci-seuneu" value="$07$0y7lSld1shio7C8sfG8r2.SS5AEZmN3P.h2wXBBWT94/lgalUfAfK">
+  <!-- End of Form Data -->
+  <input type="hidden" name="--5b3d708d-7a61-4a9f-b218-611e1a417077--">
+	<br><br>
+  <!-- Submit Button -->
+  <center><input type="submit" value="Simpan"></center>
+</form>
+<br>
+</div>
+
+<footer class="footer">
+     <p><center>&copy; Simple Absen 2024 by HZ</center></p>
+  </footer>
+<!--JS Image--->
+<script>
+/**
+ * Create an arrow function that will be called when an image is selected.
+ */
+const previewImage = (event) => {
+    /**
+     * Get the selected files.
+     */
+    const imageFiles = event.target.files;
+    /**
+     * Count the number of files selected.
+     */
+    const imageFilesLength = imageFiles.length;
+    /**
+     * If at least one image is selected, then proceed to display the preview.
+     */
+    if (imageFilesLength > 0) {
+        /**
+         * Get the image path.
+         */
+        const imageSrc = URL.createObjectURL(imageFiles[0]);
+        /**
+         * Select the image preview element.
+         */
+        const imagePreviewElement = document.querySelector("#preview-selected-image");
+        /**
+         * Assign the path to the image preview element.
+         */
+        imagePreviewElement.src = imageSrc;
+        /**
+         * Show the element by changing the display value to "block".
+         */
+        imagePreviewElement.style.display = "block";
+    }
+};
+</script>
+</body>
+</html>
